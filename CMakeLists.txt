@@ -40,7 +40,7 @@ add_library(${LIB_NAME} ${LIB_TYPE} ${LIB_SOURCES})
 target_include_directories(${LIB_NAME} PUBLIC 
         $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:include/${PROJECT_NAME}-${PROJECT_VERSION}>)
-
+set_property(TARGET ${LIB_NAME} PROPERTY POSITION_INDEPENDENT_CODE ON)
 
 packageProject(
     NAME ${PROJECT_NAME}
